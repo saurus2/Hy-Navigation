@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <h1>TEST</h1>
+        <input id="name" type="text" >
+        <button onclick="getSound()">Request API </button>
+        <script>
+            function getSound() {
+                const name = "test"
+                fetch(`http://localhost:3000/sound/${name}`)
+                .then((Response) => Response.json())
+                .then((data) => {
+                    console.log(data)
+                    document.getElementById('name').value = data.sound
+                });
+            }
+        </script>        
+    </body>
+</html>
+
