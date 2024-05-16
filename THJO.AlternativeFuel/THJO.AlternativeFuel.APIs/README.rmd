@@ -1,0 +1,14 @@
+1. Project Structure
+1-1) Folder
+app.js  :: start point.
+package.json
+/Public :: static contents that everyone can access without authentication.
+    >> images  :: images
+    >> js      :: javascript files
+    >> css     :: syle sheets files
+/views   :: html 
+/controllers :: 
+/middleware  ::
+/routes      :: Routing files URI:[MEHOD]
+/models      :: define data class
+/data        :: json data files
