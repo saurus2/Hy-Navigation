@@ -1,11 +1,12 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild, NgZone, OnDestroy, inject } from '@angular/core';
 import { GmapsService } from '../services/gamps/gmaps.service';
 import { ClearWatchOptions, Geolocation } from '@capacitor/geolocation';
-import { IonicModule, Platform } from '@ionic/angular';
+import { IonicModule, Platform, LoadingController } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { BehaviorSubject, Subscription } from 'rxjs';
 import { NrelService } from '../services/nrel.service';
 import { HttpClient } from '@angular/common/http';
+
 
 declare var google;
 
@@ -53,6 +54,7 @@ export class HomePage implements OnInit, OnDestroy{
     private platform: Platform,
     public ngZone: NgZone,
     public http: HttpClient,
+    private loadingController: LoadingController,
   ) {
     // this.renderer.listen('window', 'click', (e:Event)=> {
     //   if(e.target !== this.map.nativeElement) {
@@ -147,27 +149,39 @@ export class HomePage implements OnInit, OnDestroy{
 
   // getting current lat & lng by google api
   async getLocation() {
-    let googleMaps: any = await this.gmaps.loadGoogleMaps();
-    this.googleMaps = googleMaps;
-
-    const coordinates = await Geolocation.getCurrentPosition();
-    this.currentLat = coordinates.coords.latitude;
-    this.currentLng = coordinates.coords.longitude;
-
-    console.log("currentLat: ", this.currentLat, "currentLng: ", this.currentLng);
-
-    const location = new googleMaps.LatLng(this.currentLat, this.currentLng);
-    const icon = {
-      url: 'assets/icon/pin.png',
-      scaledSize: new googleMaps.Size(35, 50),
-    };
-
-    console.log('Current position:', location);
-    var marker = new googleMaps.Marker({
-      position: location,
-      map: this.map,
+    // loading feature
+    const loading = await this.loadingController.create({
+      message: 'Loading...'
     });
-    this.map.setCenter(location);
+    await loading.present();
+
+    try {
+      let googleMaps: any = await this.gmaps.loadGoogleMaps();
+      this.googleMaps = googleMaps;
+
+      const coordinates = await Geolocation.getCurrentPosition();
+      this.currentLat = coordinates.coords.latitude;
+      this.currentLng = coordinates.coords.longitude;
+
+      console.log("currentLat: ", this.currentLat, "currentLng: ", this.currentLng);
+
+      const location = new googleMaps.LatLng(this.currentLat, this.currentLng);
+      const icon = {
+        url: 'assets/icon/pin.png',
+        scaledSize: new googleMaps.Size(35, 50),
+      };
+
+      console.log('Current position:', location);
+      var marker = new googleMaps.Marker({
+        position: location,
+        map: this.map,
+      });
+      this.map.setCenter(location);
+    } catch (e) {
+      console.log(e);
+    } finally {
+      loading.dismiss();
+    }
   }
 
   // get the query from input
