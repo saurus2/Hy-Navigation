@@ -11,9 +11,6 @@
           placeholder="Search for area, street..."
           (ionInput)="onSearchChange($event)">
         </ion-searchbar>
-        <ion-button id="trashBin" (click)="closeList()">
-          <ion-icon name="trash-outline"></ion-icon>
-        </ion-button>
       </div>
     </ion-title>
   </ion-toolbar>
@@ -23,7 +20,7 @@
   <!-- the results list for searching -->
   <div class="searchList" *ngIf="isListOpen && places?.length > 0" #searchList>
     <ion-list *ngIf="places?.length > 0">
-      <ion-item *ngFor="let place of places" class="ion-margin-top">
+      <ion-item *ngFor="let place of places" class="ion-margin-top" (click)="placeSelected(place)">
         <ion-icon name="location-outline" slot="start"></ion-icon>
         <ion-label>
           {{ place?.title }}

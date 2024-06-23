@@ -108,8 +108,7 @@ export class HomePage implements OnInit, OnDestroy{
   // Click event to add marker
   onMapClick(){
     this.mapClickListener = this.googleMaps.event.addListener(this.map, "click", (mapMouseEvent: { latLng: { toJSON: () => any; }; }) => {
-      console.log("hi",mapMouseEvent.latLng.toJSON());
-      this.addMarker(mapMouseEvent.latLng);
+      this.places = [];
     });
   }
   
@@ -186,10 +185,13 @@ export class HomePage implements OnInit, OnDestroy{
 
   // get the query from input
   async onSearchChange(event: any) {
-    this.isListOpen = true;
+    // this.isListOpen = true;
     this.query = event.detail.value;
     if (this.query.length > 0) {
+      this.isListOpen = true;
       await this.getPlaces();
+    } else {
+      this.closeList();
     }
   }
 
@@ -214,8 +216,10 @@ export class HomePage implements OnInit, OnDestroy{
               AutocompleteItems.push(places);
             }
             this.places = AutocompleteItems;
-            console.log('final places', this.places);
+          }else {
+            this.places = [];
           }
+          console.log('final places', this.places);
         });
       });
     } catch (e) {
@@ -240,6 +244,15 @@ export class HomePage implements OnInit, OnDestroy{
   // close the list
   closeList() {
     this.isListOpen = false;
+    this.places = [];
+  }
+
+  // select place
+  placeSelected(place: any) {
+    const location = new google.maps.LatLng(place.lat, place.lng);
+    this.addMarker(location);
+    this.map.setCenter(location);
+    this.closeList();
   }
 
   // destroy subscribe funciton for memory leak
