@@ -21,27 +21,29 @@
 
 // Overlapping the search result list 
 ion-searchbar {
-  padding-left: 5%;
-  float: left;
   width: 90%;
+  float: left;
   z-index: 3;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+  float: none;
 }
 
-#trashBin {
-  float: left;
-  width: 5%;
+#Menu {
+  width: auto;
   z-index: 3;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+  float: left;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
 }
 
 .searchList {
   position: absolute;
-  // top: calc(60px + var(--ion-toolbar-height));
   top: calc(var(--ion-toolbar-height) + 1px);
-  left: 8%;
+  left: 15%;
   width: 80%;
   z-index: 2;
   background: white;
