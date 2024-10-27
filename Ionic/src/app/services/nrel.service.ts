@@ -17,8 +17,8 @@ export class NrelService {
   
   constructor() { }
 
-  getAllStations(lat: any, lng: any) {
-    console.log("nrel getAllStations lat: ", lat, " lng: ", lng);
-    return this.http.get(`${BASE_URL}/api/alt-fuel-stations/v1/nearest.json?api_key=${API_KEY}&latitude=${lat}&longitude=${lng}&fuel_type=HY`);
+  getAllStations(lat: any, lng: any, radius: any) {
+    console.log("nrel getAllStations lat: ", lat, " lng: ", lng, " radius: ", radius);
+    return this.http.get(`${BASE_URL}/api/alt-fuel-stations/v1/nearest.json?api_key=${API_KEY}&latitude=${lat}&longitude=${lng}&fuel_type=HY&radius=${radius}`);
   }
 }

@@ -14,6 +14,11 @@
           placeholder="Search for area, street..."
           (ionInput)="onSearchChange($event)">
         </ion-searchbar>
+        <ion-buttons slot="end">
+          <ion-button (click)="openFilter()">
+            <ion-icon slot="icon-only" name="options-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
       </div>
     </ion-title>
   </ion-toolbar>

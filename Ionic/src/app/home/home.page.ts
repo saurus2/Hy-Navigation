@@ -1,11 +1,12 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild, NgZone, OnDestroy, inject } from '@angular/core';
 import { GmapsService } from '../services/gamps/gmaps.service';
 import { ClearWatchOptions, Geolocation } from '@capacitor/geolocation';
-import { IonicModule, Platform, LoadingController } from '@ionic/angular';
+import { IonicModule, Platform, LoadingController, ModalController } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { BehaviorSubject, Subscription } from 'rxjs';
 import { NrelService } from '../services/nrel.service';
 import { HttpClient } from '@angular/common/http';
+import { FilterModalComponent } from '../filter-modal/filter-modal.component';
 
 
 declare var google;
@@ -34,6 +35,8 @@ export class HomePage implements OnInit, OnDestroy{
   // hiding the list
   isListOpen = true;
 
+  radius: number = 5; // default
+
   // google map search
   places: any[] = [];
   query: string;
@@ -55,6 +58,7 @@ export class HomePage implements OnInit, OnDestroy{
     public ngZone: NgZone,
     public http: HttpClient,
     private loadingController: LoadingController,
+    private modalController: ModalController,
   ) {
     // this.renderer.listen('window', 'click', (e:Event)=> {
     //   if(e.target !== this.map.nativeElement) {
@@ -263,7 +267,8 @@ export class HomePage implements OnInit, OnDestroy{
   // need to seperate component
   // load nrel API
   async loadAllStations() {
-    this.nrelServices.getAllStations(this.currentLat, this.currentLng).subscribe((res) => {
+    this.nrelServices.getAllStations(this.currentLat, this.currentLng, this.radius).subscribe((res) => {
+      console.log('Radius updated in home.page.ts:', this.radius);
       let googleMaps: any = this.googleMaps;
       console.log("getAllStations in home page, currentLat: ", this.currentLat, "currentLng: ", this.currentLng);
 
@@ -283,5 +288,28 @@ export class HomePage implements OnInit, OnDestroy{
         this.addMarker(location);
       });
     });
+  }
+
+  updateRadius(newRadius: number) {
+    this.radius = newRadius;
+    console.log('Radius updated in home.page.ts:', this.radius);
+  }
+
+  // Open Modal
+  async openFilter() {
+    const modal = await this.modalController.create({
+      component: FilterModalComponent,
+      componentProps: { radius: this.radius }  // 초기값 전달
+    });
+
+    // 모달이 닫힌 후 데이터 처리
+    modal.onDidDismiss().then((result) => {
+      if (result.data) {
+        this.radius = result.data.radius;  // 모달에서 받아온 radius 값 업데이트
+        console.log('Updated radius in home:', this.radius);
+      }
+    });
+
+    return await modal.present();
   }
 }
