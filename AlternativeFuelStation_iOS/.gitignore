@@ -1,0 +1,31 @@
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Xcode
+*.xcworkspace
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.plist
+
+# build result
+build/
+
+# macOS
+../.DS_Store
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Xcode Project setting files
+*.pbxuser
+*.mode1v3
+*.perspectivev3
+
+# Temporary files
+*.swp
+*.tmp
+
+# Preview Content
+AlternativeFuelStation_iOS/Preview Content/
