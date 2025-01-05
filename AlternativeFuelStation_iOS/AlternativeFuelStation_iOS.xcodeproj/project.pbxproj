@@ -11,6 +11,19 @@
 		B26001252D2AFFF700702003 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26001242D2AFFF700702003 /* ContentView.swift */; };
 		B26001272D2AFFF800702003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B26001262D2AFFF800702003 /* Assets.xcassets */; };
 		B260012A2D2AFFF800702003 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B26001292D2AFFF800702003 /* Preview Assets.xcassets */; };
+		B27B0EAC2D2B12F500349F04 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27B0EAB2D2B12F500349F04 /* ApiService.swift */; };
+		B27B0EAE2D2B130500349F04 /* HydrogenStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27B0EAD2D2B130500349F04 /* HydrogenStation.swift */; };
+		B27B0EB02D2B131900349F04 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27B0EAF2D2B131900349F04 /* MapView.swift */; };
+		B27B0EB22D2B132900349F04 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27B0EB12D2B132900349F04 /* FilterView.swift */; };
+		B27B0EB42D2B191700349F04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27B0EB32D2B191700349F04 /* AppDelegate.swift */; };
+		B27B0EB62D2B199D00349F04 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27B0EB52D2B199D00349F04 /* SceneDelegate.swift */; };
+		B27B0EB82D2B1ACB00349F04 /* GMapservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27B0EB72D2B1ACB00349F04 /* GMapservice.swift */; };
+		B27B0EBA2D2B1BD500349F04 /* NRELService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27B0EB92D2B1BD500349F04 /* NRELService.swift */; };
+		B27B0EBC2D2B1CE200349F04 /* FilterOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27B0EBB2D2B1CE200349F04 /* FilterOptions.swift */; };
+		B27B0EBE2D2B207100349F04 /* SearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27B0EBD2D2B207100349F04 /* SearchListView.swift */; };
+		B27B0EC12D2B208800349F04 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27B0EC02D2B208800349F04 /* SearchBar.swift */; };
+		B27B0EC32D2B209300349F04 /* MapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27B0EC22D2B209300349F04 /* MapAnnotationView.swift */; };
+		B27B0EC52D2B20A000349F04 /* MapViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27B0EC42D2B20A000349F04 /* MapViewContainer.swift */; };
 		E4CF3CEBE62EF33F65291476 /* Pods_AlternativeFuelStation_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFD7C16744FEE4A6CB176AD9 /* Pods_AlternativeFuelStation_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +34,19 @@
 		B26001242D2AFFF700702003 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B26001262D2AFFF800702003 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B26001292D2AFFF800702003 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B27B0EAB2D2B12F500349F04 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		B27B0EAD2D2B130500349F04 /* HydrogenStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydrogenStation.swift; sourceTree = "<group>"; };
+		B27B0EAF2D2B131900349F04 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		B27B0EB12D2B132900349F04 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		B27B0EB32D2B191700349F04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B27B0EB52D2B199D00349F04 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B27B0EB72D2B1ACB00349F04 /* GMapservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMapservice.swift; sourceTree = "<group>"; };
+		B27B0EB92D2B1BD500349F04 /* NRELService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRELService.swift; sourceTree = "<group>"; };
+		B27B0EBB2D2B1CE200349F04 /* FilterOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOptions.swift; sourceTree = "<group>"; };
+		B27B0EBD2D2B207100349F04 /* SearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListView.swift; sourceTree = "<group>"; };
+		B27B0EC02D2B208800349F04 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		B27B0EC22D2B209300349F04 /* MapAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotationView.swift; sourceTree = "<group>"; };
+		B27B0EC42D2B20A000349F04 /* MapViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewContainer.swift; sourceTree = "<group>"; };
 		BFD7C16744FEE4A6CB176AD9 /* Pods_AlternativeFuelStation_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlternativeFuelStation_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7AF665EB53B63E5649331D4 /* Pods-AlternativeFuelStation_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlternativeFuelStation_iOS.release.xcconfig"; path = "Target Support Files/Pods-AlternativeFuelStation_iOS/Pods-AlternativeFuelStation_iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,8 +93,10 @@
 		B26001212D2AFFF700702003 /* AlternativeFuelStation_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				B26001222D2AFFF700702003 /* AlternativeFuelStation_iOSApp.swift */,
-				B26001242D2AFFF700702003 /* ContentView.swift */,
+				B27B0EAA2D2B12D600349F04 /* Services */,
+				B27B0EA92D2B12CD00349F04 /* Models */,
+				B27B0EA82D2B12B400349F04 /* Views */,
+				B27B0EA72D2B129600349F04 /* App */,
 				B26001262D2AFFF800702003 /* Assets.xcassets */,
 				B26001282D2AFFF800702003 /* Preview Content */,
 			);
@@ -81,6 +109,57 @@
 				B26001292D2AFFF800702003 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B27B0EA72D2B129600349F04 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B26001222D2AFFF700702003 /* AlternativeFuelStation_iOSApp.swift */,
+				B27B0EB32D2B191700349F04 /* AppDelegate.swift */,
+				B27B0EB52D2B199D00349F04 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		B27B0EA82D2B12B400349F04 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B27B0EBF2D2B207600349F04 /* CustomComponents */,
+				B26001242D2AFFF700702003 /* ContentView.swift */,
+				B27B0EAF2D2B131900349F04 /* MapView.swift */,
+				B27B0EB12D2B132900349F04 /* FilterView.swift */,
+				B27B0EBD2D2B207100349F04 /* SearchListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B27B0EA92D2B12CD00349F04 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B27B0EAD2D2B130500349F04 /* HydrogenStation.swift */,
+				B27B0EBB2D2B1CE200349F04 /* FilterOptions.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B27B0EAA2D2B12D600349F04 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B27B0EAB2D2B12F500349F04 /* ApiService.swift */,
+				B27B0EB72D2B1ACB00349F04 /* GMapservice.swift */,
+				B27B0EB92D2B1BD500349F04 /* NRELService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B27B0EBF2D2B207600349F04 /* CustomComponents */ = {
+			isa = PBXGroup;
+			children = (
+				B27B0EC02D2B208800349F04 /* SearchBar.swift */,
+				B27B0EC22D2B209300349F04 /* MapAnnotationView.swift */,
+				B27B0EC42D2B20A000349F04 /* MapViewContainer.swift */,
+			);
+			path = CustomComponents;
 			sourceTree = "<group>";
 		};
 		F3C7FB79136B45615119E527 /* Frameworks */ = {
@@ -205,8 +284,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B27B0EC12D2B208800349F04 /* SearchBar.swift in Sources */,
+				B27B0EBE2D2B207100349F04 /* SearchListView.swift in Sources */,
+				B27B0EBC2D2B1CE200349F04 /* FilterOptions.swift in Sources */,
+				B27B0EB82D2B1ACB00349F04 /* GMapservice.swift in Sources */,
 				B26001252D2AFFF700702003 /* ContentView.swift in Sources */,
+				B27B0EC52D2B20A000349F04 /* MapViewContainer.swift in Sources */,
 				B26001232D2AFFF700702003 /* AlternativeFuelStation_iOSApp.swift in Sources */,
+				B27B0EC32D2B209300349F04 /* MapAnnotationView.swift in Sources */,
+				B27B0EB02D2B131900349F04 /* MapView.swift in Sources */,
+				B27B0EAE2D2B130500349F04 /* HydrogenStation.swift in Sources */,
+				B27B0EB42D2B191700349F04 /* AppDelegate.swift in Sources */,
+				B27B0EB22D2B132900349F04 /* FilterView.swift in Sources */,
+				B27B0EAC2D2B12F500349F04 /* ApiService.swift in Sources */,
+				B27B0EBA2D2B1BD500349F04 /* NRELService.swift in Sources */,
+				B27B0EB62D2B199D00349F04 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct AlternativeFuelStation_iOSApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate // AppDelegate connect
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView() // Starting app point
         }
     }
 }
