@@ -11,7 +11,9 @@ import GoogleMaps
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        GMSServices.provideAPIKey("AIzaSyAMiG8AViwFVGsDis28K2qmKtJldcDVork") // Google Maps API Key 설정
+        if GMSServices.provideAPIKey("AIzaSyAMiG8AViwFVGsDis28K2qmKtJldcDVork") == false {
+                    print("Google Maps API 키 초기화 실패")
+                } // Google Maps API Key 설정
         return true
     }
 }
