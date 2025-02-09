@@ -1,7 +1,0 @@
-{
-  "name": "hydrogen",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
