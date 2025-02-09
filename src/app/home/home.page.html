@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      <!-- google map search -->
+      <div class="autocomplete">
+        <ion-button id="Menu">
+          <ion-icon name="menu-outline"></ion-icon>
+        </ion-button>
+        <ion-searchbar
+          search-icon="search-circle"
+          animated="true"
+          show-clear-button="focus"
+          debounce="800"
+          placeholder="Search for area, street..."
+          (ionInput)="onSearchChange($event)">
+        </ion-searchbar>
+        <ion-buttons slot="end">
+          <ion-button (click)="openFilter()">
+            <ion-icon slot="icon-only" name="options-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- the results list for searching -->
+  <div class="searchList" *ngIf="isListOpen && places?.length > 0" #searchList>
+    <ion-list *ngIf="places?.length > 0">
+      <ion-item *ngFor="let place of places" class="ion-margin-top" (click)="placeSelected(place)">
+        <ion-icon name="location-outline" slot="start"></ion-icon>
+        <ion-label>
+          {{ place?.title }}
+          <p>
+            <ion-text>
+              {{ place?.address }}
+            </ion-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <!-- map  -->
+  <div class="map" #map></div>
+
+  <!-- Button -->
+  <ion-fab bottom id="menuButtons" style="display: flex; justify-content: space-around;">
+    <ion-row text-center>
+      <ion-col>
+        <ion-fab-button (click)="getLocation()">
+          <ion-icon name="navigate-circle-outline"></ion-icon>
+        </ion-fab-button>
+      </ion-col>
+      <ion-col>
+        <ion-fab-button (click)="loadAllStations()">
+          <ion-icon name="battery-charging-outline"></ion-icon>
+        </ion-fab-button>
+      </ion-col>
+      <ion-col>
+        <ion-fab-button>
+          <ion-icon name="person-circle-outline"></ion-icon>
+        </ion-fab-button>
+      </ion-col>
+    </ion-row>
+  </ion-fab>
+</ion-content>
